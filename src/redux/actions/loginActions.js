@@ -20,8 +20,8 @@ export const loginUser = (email, password) => {
                 localStorage.setItem("expireDate", expireDate);
                 localStorage.setItem("refreshToken", refreshToken);
                 dispatch(loginUserSuccess(token, localId));
-                // dispatch(actions.autologout(expiresIn * 1000)); // 1000 үржүүлж байгаа нь мил секнд болгож байна
-                dispatch(actions.autologout(5000)); // 1000 үржүүлж байгаа нь мил секнд болгож байна
+                dispatch(actions.autologout(expiresIn * 1000)); // 1000 үржүүлж байгаа нь мил секнд болгож байна
+                // dispatch(actions.autologout(5000)); // 1000 үржүүлж байгаа нь мил секнд болгож байна
             }).catch(err => {
                 dispatch(loginUserError(err));
             });
